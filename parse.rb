@@ -61,9 +61,13 @@ def cron(parsed)
 end
 
 
-file = open('/home/jack/allsgs.json', 'r')
-json = file.read
+#file = open('/home/jack/allsgs.json', 'r')
+#json = file.read
+json = STDIN.read
 parsed = JSON.parse(json)
 
-main(parsed)
-cron(parsed)
+if ARGV[0] == 'cron'
+  cron(parsed)
+else
+  main(parsed)
+end
