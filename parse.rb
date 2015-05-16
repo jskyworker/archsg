@@ -1,3 +1,5 @@
+#!/bin/env ruby
+
 require 'json'
 require 'rubygems'
 
@@ -25,10 +27,10 @@ def main(parsed)
       puts "#{k}"
       f.puts "#{k}\n"
     end
-    puts 'IP addresses with a special ACLs'
+    puts "\n\nIP addresses with a special ACLs"
     f.puts "\n\nIP addresses with a special ACLs\n"
     groups_i.sort.uniq.each do |k|
-      puts "IP #{k}"
+      puts "#{k}"
       f.puts "#{k}\n"
     end
   end
