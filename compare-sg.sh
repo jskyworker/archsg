@@ -1,9 +1,7 @@
 #!/bin/bash
 
-set -x
-
 # Variables
-REPORT_DIR="/home/jack/reports/"
+REPORT_DIR="/tmp/reports/"
 CURRENT_REPORT="report-cron"
 SAVED_REPORT="report-cron.saved"
 CURRENT_DATE=$(date +"%M_%H_%m_%d_%Y")

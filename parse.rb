@@ -22,7 +22,7 @@ def main(parsed)
     end
   end
 
-  open('/home/jack/reports/ruby-report1', 'w') do |f|
+  open('/tmp/reports/ruby-report1', 'w') do |f|
     groups_o.sort.each do |k|
       puts "#{k}"
       f.puts "#{k}\n"
@@ -52,7 +52,7 @@ def cron(parsed)
     end
   end
 
-  open('/home/jack/reports/report-cron', 'w') do |f|
+  open('/tmp/reports/report-cron', 'w') do |f|
     group_c.sort.each do |k|
       puts "#{k}"
       f.puts "#{k}\n"
@@ -61,8 +61,6 @@ def cron(parsed)
 end
 
 
-#file = open('/home/jack/allsgs.json', 'r')
-#json = file.read
 json = STDIN.read
 parsed = JSON.parse(json)
 

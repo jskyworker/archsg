@@ -6,29 +6,29 @@ package { $rbpkgs:
   ensure   => "installed",
   provider => 'gem',
 }
-  
-file { ['/home/username/bin', '/tmp/reports']:
+
+file { ['/root/bin', '/tmp/reports']:
   ensure => 'directory',
-  owner  => 'username',
+  owner  => 'root',
   mode   => '0755',
 }
 
 file { 'compare-sg-script':
   ensure  => present,
-  path    => '/home/username/bin/compare-sg.sh',
-  owner   => 'username',
+  path    => '/root/bin/compare-sg.sh',
+  owner   => 'root',
   mode    => '0755',
   source  => 'puppet:///modules/sec_audit/compare-sg.sh',
-  require => File['/home/username/bin'],
+  require => File['/root/bin'],
 }
 
 file { 'parse-rb':
   ensure  => present,
-  path    => '/home/username/bin/parse.rb',
-  owner   => 'username',
+  path    => '/root/bin/parse.rb',
+  owner   => 'root',
   mode    => '0755',
   source  => 'puppet:///modules/sec_audit/parse.rb',
-  require => File['/home/username/bin'],
+  require => File['/root/bin'],
 }
 
 file { '/etc/cron.d/sec_audit.crontab':
